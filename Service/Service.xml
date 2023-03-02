@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Service</name>
+    </assembly>
+    <members>
+        <member name="M:Service.Repository.DomainRepository`1.UpdateFieldsSave(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Update Field entity
+            </summary>
+            <param name="entity"></param>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Repository.DomainRepository`1.UpdateFieldsSaveAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Update Field entity
+            </summary>
+            <param name="entity"></param>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Repository.DomainRepository`1.ExcuteQueryPagingAsync(System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Lấy danh sách phân trang
+            </summary>
+            <param name="commandText"></param>
+            <param name="sqlParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.Configurations.EmailConfigurationService.GetEmailConfig">
+            <summary>
+            Lấy thông tin cấu hình Email
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.Configurations.EmailConfigurationService.GetEmailContent">
+            <summary>
+            Lấy thông tin nội dung email
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.Configurations.EmailConfigurationService.Send(System.Net.Mail.MailMessage,Utilities.EmailSendConfigure)">
+            <summary>
+            Send the email using the SMTP server 
+            </summary>
+            <param name="message"></param>
+            <param name="emailConfig"></param>
+        </member>
+        <member name="M:Service.Services.Configurations.SMSConfigurationService.SendSMS(System.String,System.String)">
+            <summary>
+            Gửi tin nhắn
+            </summary>
+            <param name="Phone"></param>
+            <param name="Content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.DomainServices.CatalogueService`2.GetPagedListData(`1)">
+            <summary>
+            Lấy danh sách phân trang danh mục
+            </summary>
+            <param name="baseSearch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.DomainServices.CatalogueService`2.GetExistItemMessage(`0)">
+            <summary>
+            Check trùng mã
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.DomainServices.DomainService`2.GetStoreProcName">
+            <summary>
+            Lấy thông tin tên procedure cần exec
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.DomainServices.DomainService`2.UpdateFieldAsync(`0,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Cập nhật theo field
+            </summary>
+            <param name="item"></param>
+            <param name="includeProperties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.DomainServices.DomainService`2.UpdateFieldAsync(System.Collections.Generic.IList{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Cập nhật theo field
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.DomainServices.DomainService`2.DeleteDataAsync(System.Guid)">
+            <summary>
+            Xoá dữ liệu có trả về data
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.ResponseCacheService.GetCachedResponseAsync(System.String)">
+            <summary>
+            Lấy cache
+            </summary>
+            <param name="cacheKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.ResponseCacheService.RemoveCacheResponseAsync(System.String)">
+            <summary>
+            Xóa cache
+            </summary>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.ResponseCacheService.GetKeyAsync(System.String)">
+            <summary>
+            Lấy tất cả cache có key chứa pattern truyền vào
+            </summary>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.ResponseCacheService.SetCacheResponseAsync(System.String,System.Object,System.TimeSpan)">
+            <summary>
+            Set cache
+            </summary>
+            <param name="cacheKey"></param>
+            <param name="response"></param>
+            <param name="timeOut"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.Specializing.UserSpecializingService.CheckOTP(Entities.Users,System.String)">
+            <summary>
+            Kiểm tra mã OTP hợp lệ
+            </summary>
+            <param name="user"></param>
+            <param name="OTPCheck"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.Specializing.UserSpecializingService.GenerateOTPAndSendMail(Entities.Users,System.String,System.String)">
+            <summary>
+            Tạo Mã OTP cho User và gửi mail đến User đó
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.UserService.GetExistItemMessage(Entities.Users)">
+            <summary>
+            Kiểm tra user đã tồn tại chưa?
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.UserService.UpdateUserPassword(System.Guid,System.String)">
+            <summary>
+            Cập nhật password mới cho user
+            </summary>
+            <param name="userId"></param>
+            <param name="newPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.UserService.Login(System.String,System.String)">
+            <summary>
+            Kiểm tra user đăng nhập
+            </summary>
+            <param name="userName"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.UserService.CheckCurrentUserPassword(System.Guid,System.String,System.String)">
+            <summary>
+            Kiểm tra pass word cũ đã giống chưa
+            </summary>
+            <param name="userId"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Service.Services.UserService.HasPermission(System.String,System.String,System.String)">
+            <summary>
+            Cập nhật thông tin user token
+            </summary>
+            <param name="userId"></param>
+            <param name="token"></param>
+            <param name="isLogin"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

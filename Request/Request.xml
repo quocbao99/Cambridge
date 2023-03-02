@@ -1,0 +1,475 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Request</name>
+    </assembly>
+    <members>
+        <member name="T:Request.Auth.ChangePassword">
+            <summary>
+            Model đổi mật khẩu
+            </summary>
+        </member>
+        <member name="P:Request.Auth.ChangePassword.OldPassword">
+            <summary>
+            Mật khẩu cũ
+            </summary>
+        </member>
+        <member name="P:Request.Auth.ChangePassword.NewPassword">
+            <summary>
+            Mật khẩu mới
+            </summary>
+        </member>
+        <member name="P:Request.Auth.ChangePassword.ConfirmNewPassword">
+            <summary>
+            Xác nhận mật khẩu mới
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Password.NewPassword">
+            <summary>
+            Mật khẩu mới
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Password.ConfirmNewPassword">
+            <summary>
+            Xác nhận mật khẩu mới
+            </summary>
+        </member>
+        <member name="P:Request.Auth.ChangePasswordOTP.NewPassword">
+            <summary>
+            Mật khẩu mới
+            </summary>
+        </member>
+        <member name="P:Request.Auth.ChangePasswordOTP.ConfirmNewPassword">
+            <summary>
+            Xác nhận mật khẩu mới
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Login.Username">
+            <summary>
+            Tên đăng nhập
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Login.Password">
+            <summary>
+            Mật khẩu
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Login.RememberPassword">
+            <summary>
+            Ghi nhớ mật khẩu
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Login.OTPValue">
+            <summary>
+            Mã OTP
+            </summary>
+        </member>
+        <member name="P:Request.Auth.ResendOTP.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Register.Username">
+            <summary>
+            Email hoặc Số điện thoại
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Register.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Register.Phone">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Register.FullName">
+            <summary>
+            Họ và tên
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Role.roleName">
+            <summary>
+            Tên chức năng (menu)
+            </summary>
+        </member>
+        <member name="P:Request.Auth.Role.isView">
+            <summary>
+            Quyền của chức năng
+            </summary>
+        </member>
+        <member name="P:Request.Catalogue.CatalogueCreate.RequestMenuCreateModel.Icon">
+            <summary>
+            Icon của menu
+            </summary>
+        </member>
+        <member name="P:Request.Catalogue.CatalogueCreate.RequestMenuCreateModel.Link">
+            <summary>
+            Đường dẫn đến trang
+            </summary>
+        </member>
+        <member name="P:Request.Catalogue.CatalogueUpdate.RequestMenuUpdateModel.Icon">
+            <summary>
+            Icon của menu
+            </summary>
+        </member>
+        <member name="P:Request.Catalogue.CatalogueUpdate.RequestMenuUpdateModel.Link">
+            <summary>
+            Đường dẫn đến trang
+            </summary>
+        </member>
+        <member name="T:Request.Configuration.EmailConfigurationRequestCreate">
+            <summary>
+            Cấu hình email
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestCreate.smtpServer">
+            <summary>
+            SMTP Server
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestCreate.port">
+            <summary>
+            Port 
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestCreate.enableSsl">
+            <summary>
+            Cờ mở SSL
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestCreate.connectType">
+            <summary>
+            Loại connect
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestCreate.displayName">
+            <summary>
+            Tên hiển thị
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestCreate.userName">
+            <summary>
+            Tên đăng nhập cấu hình
+            </summary>
+        </member>
+        <member name="T:Request.Configuration.EmailConfigurationRequestUpdate">
+            <summary>
+            Cấu hình email
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestUpdate.smtpServer">
+            <summary>
+            SMTP Server
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestUpdate.port">
+            <summary>
+            Port 
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestUpdate.enableSsl">
+            <summary>
+            Cờ mở SSL
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestUpdate.connectType">
+            <summary>
+            Loại connect
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestUpdate.displayName">
+            <summary>
+            Tên hiển thị
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.EmailConfigurationRequestUpdate.userName">
+            <summary>
+            Tên đăng nhập cấu hình
+            </summary>
+        </member>
+        <member name="T:Request.Configuration.OTPHistoryRequest">
+            <summary>
+            Lịch sử OTP
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.OTPHistoryRequest.userId">
+            <summary>
+            Thông tin người dùng
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.OTPHistoryRequest.phone">
+            <summary>
+            SDT gửi OTP
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.OTPHistoryRequest.email">
+            <summary>
+            Email gửi OTP
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.OTPHistoryRequest.otpValue">
+            <summary>
+            Mã OTP
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.OTPHistoryRequest.expiredDate">
+            <summary>
+            Thời gian hết hạn
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.OTPHistoryRequest.status">
+            <summary>
+            Trạng thái
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.SMSConfiguartionRequest.templateText">
+            <summary>
+            Cú pháp tin nhắn mẫu
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.SMSConfiguartionRequest.webServiceUrl">
+            <summary>
+            Url web service
+            </summary>
+        </member>
+        <member name="T:Request.Configuration.SMSEmailTemplateRequest">
+            <summary>
+            Bảng câu hình template gửi đi
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.SMSEmailTemplateRequest.subject">
+            <summary>
+            Tiêu đề
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.SMSEmailTemplateRequest.body">
+            <summary>
+            Nội dung
+            </summary>
+        </member>
+        <member name="P:Request.Configuration.SMSEmailTemplateRequest.isSMS">
+            <summary>
+            Mẫu là SMS
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.AppDomainFileRequestl.fileName">
+            <summary>
+            Tên file
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.AppDomainFileRequestl.contentType">
+            <summary>
+            Loại file
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.AppDomainFileRequestl.fileExtension">
+            <summary>
+            Đuôi file
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.AppDomainFileRequestl.description">
+            <summary>
+            Mô tả
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.AppDomainFileRequestl.fileRandomName">
+            <summary>
+            Tên lưu trong thư mục
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.AppDomainFileRequestl.fileUrl">
+            <summary>
+            Link download File
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.DomainCreate.Created">
+            <summary>
+            Ngày tạo
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.DomainCreate.Deleted">
+            <summary>
+            Cờ xóa
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.DomainCreate.Active">
+            <summary>
+            Cờ active
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.DomainUpdate.Updated">
+            <summary>
+            Ngày cập nhật
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.TourAutoRequest.AutoType">
+            <summary>
+            1 - Recurring, 2 - Schedule
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.TourAutoRequest.Recurring">
+            <summary>
+            định kỳ theo ngày (1)
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.TourAutoRequest.StartDateRecurring">
+            <summary>
+            ngày bắt đầu recurring (1)
+            </summary>
+        </member>
+        <member name="P:Request.DomainRequests.TourAutoRequest.Schedule">
+            <summary>
+            chọn ngày (2)
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.ImageCreate.Link">
+            <summary>
+            link hình
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.OrderCreate.UserID">
+            <summary>
+            Mã người dùng
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.OrderCreate.PackageInfo">
+            <summary>
+            thông tin gói khi mua đơn hàng
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.RoleCreate.Permissions">
+            <summary>
+            danh sách phân quyền
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.RoleCreate.Menus">
+            <summary>
+            danh sách menu
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.Username">
+            <summary>
+            tên đăng nhập
+            </summary>
+            
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.Address">
+            <summary>
+            Địa chỉ
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.Password">
+            <summary>
+            Mật khẩu người dùng
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.FullName">
+            <summary>
+            Tên đầy đủ
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.Birthday">
+            <summary>
+            Ngày sinh
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.IdentityCard">
+            <summary>
+            Chứng minh nhân dân
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.Gender">
+            <summary>
+            Giới tính
+            0 => Khác
+            1 => Nam
+            2 => Nữ
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.Note">
+            <summary>
+            Ghi chú
+            </summary>
+        </member>
+        <member name="P:Request.RequestCreate.UserCreate.RoleId">
+            <summary>
+            Danh sách quyền của nhân viên
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.OrderUpdate.UserID">
+            <summary>
+            Mã người dùng
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.OrderUpdate.PackageInfo">
+            <summary>
+            thông tin gói khi mua đơn hàng
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.RoleUpdate.Permissions">
+            <summary>
+            Danh sách chức năng
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.RoleUpdate.Menus">
+            <summary>
+            Danh sách menu được truy cập (Định dạng Json)
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.Username">
+            <summary>
+            tên đăng nhập
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.Address">
+            <summary>
+            Địa chỉ
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.Status">
+            <summary>
+            Trạng thái
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.FullName">
+            <summary>
+            Họ và tên
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.Birthday">
+            <summary>
+            Ngày sinh
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.IdentityCard">
+            <summary>
+            Chứng minh nhân dân
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.Gender">
+            <summary>
+            Giới tính
+            0 => Khác
+            1 => Nam
+            2 => Nữ
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.Note">
+            <summary>
+            Ghi chú
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.RoleId">
+            <summary>
+            Danh sách quyền của nhân viên
+            </summary>
+        </member>
+        <member name="P:Request.RequestUpdate.UserUpdate.Active">
+            <summary>
+            cờ active
+            </summary>
+        </member>
+    </members>
+</doc>

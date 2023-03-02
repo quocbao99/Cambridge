@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>H:\File OnDay\work to day\APP\APP\AUTO_ISM\AUTO_ISM\Interface\Interface.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\ContactCustomer\**" />
+    <Compile Remove="Services\Project\**" />
+    <Compile Remove="Services\WebHooks\**" />
+    <EmbeddedResource Remove="Services\ContactCustomer\**" />
+    <EmbeddedResource Remove="Services\Project\**" />
+    <EmbeddedResource Remove="Services\WebHooks\**" />
+    <None Remove="Services\ContactCustomer\**" />
+    <None Remove="Services\Project\**" />
+    <None Remove="Services\WebHooks\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\Catalogue\ICommodityTypeService.cs" />
+    <Compile Remove="Services\Catalogue\IProjectTypeService.cs" />
+    <Compile Remove="Services\Catalogue\IRequestTypeService.cs" />
+    <Compile Remove="Services\Catalogue\IServiceTypes.cs" />
+    <Compile Remove="Services\Catalogue\ISourceTypeService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.31" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="4.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Request\Request.csproj" />
+  </ItemGroup>
+
+</Project>

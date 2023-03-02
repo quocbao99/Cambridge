@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ContactCustomer\**" />
+    <Compile Remove="RequestCreate\ContactCustomer\**" />
+    <Compile Remove="RequestCreate\Project\**" />
+    <Compile Remove="RequestUpdate\ContactCustomer\**" />
+    <Compile Remove="RequestUpdate\Project\**" />
+    <Compile Remove="WebHooks\**" />
+    <EmbeddedResource Remove="ContactCustomer\**" />
+    <EmbeddedResource Remove="RequestCreate\ContactCustomer\**" />
+    <EmbeddedResource Remove="RequestCreate\Project\**" />
+    <EmbeddedResource Remove="RequestUpdate\ContactCustomer\**" />
+    <EmbeddedResource Remove="RequestUpdate\Project\**" />
+    <EmbeddedResource Remove="WebHooks\**" />
+    <None Remove="ContactCustomer\**" />
+    <None Remove="RequestCreate\ContactCustomer\**" />
+    <None Remove="RequestCreate\Project\**" />
+    <None Remove="RequestUpdate\ContactCustomer\**" />
+    <None Remove="RequestUpdate\Project\**" />
+    <None Remove="WebHooks\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Catalogue\CatalogueCreate\RequestCommodityTypeCreateModel.cs" />
+    <Compile Remove="Catalogue\CatalogueCreate\RequestProjectTypeCreateModel.cs" />
+    <Compile Remove="Catalogue\CatalogueCreate\RequestTypeCreateModel.cs" />
+    <Compile Remove="Catalogue\CatalogueCreate\SourceTypesCreateModel.cs" />
+    <Compile Remove="Catalogue\CatalogueUpdate\RequestCommodityTypeUpdateModel.cs" />
+    <Compile Remove="Catalogue\CatalogueUpdate\RequestProjectTypeUpdateModel.cs" />
+    <Compile Remove="Catalogue\CatalogueUpdate\RequestTypeUpdateModel.cs" />
+    <Compile Remove="Catalogue\CatalogueUpdate\SourceTypesUpdateModel.cs" />
+    <Compile Remove="RequestCreate\RequestContactCustomerFileCreateModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Request.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Utilities\Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

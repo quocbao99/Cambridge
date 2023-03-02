@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Entities</name>
+    </assembly>
+    <members>
+        <member name="P:Entities.Catalogue.Menu.Icon">
+            <summary>
+            Icon của menu
+            </summary>
+        </member>
+        <member name="P:Entities.Catalogue.Menu.Link">
+            <summary>
+            Đường dẫn đến trang
+            </summary>
+        </member>
+        <member name="T:Entities.Configuration.EmailConfigurations">
+            <summary>
+            Bảng cấu hình Email
+            </summary>
+        </member>
+        <member name="T:Entities.Configuration.OTPHistories">
+            <summary>
+            Lịch sử OTP
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.OTPHistories.UserId">
+            <summary>
+            Thông tin người dùng
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.OTPHistories.Phone">
+            <summary>
+            SDT gửi OTP
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.OTPHistories.Email">
+            <summary>
+            Email gửi OTP
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.OTPHistories.OtpValue">
+            <summary>
+            Mã OTP
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.OTPHistories.ExpiredDate">
+            <summary>
+            Thời gian hết hạn
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.OTPHistories.Status">
+            <summary>
+            Trạng thái
+            </summary>
+        </member>
+        <member name="T:Entities.Configuration.SMSConfigurations">
+            <summary>
+            Cấu hình SMS
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.SMSConfigurations.TemplateText">
+            <summary>
+            Cú pháp tin nhắn mẫu
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.SMSConfigurations.WebServiceUrl">
+            <summary>
+            Url web service
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.SMSEmailTemplates.Subject">
+            <summary>
+            Tiêu đề
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.SMSEmailTemplates.Body">
+            <summary>
+            Nội dung
+            </summary>
+        </member>
+        <member name="P:Entities.Configuration.SMSEmailTemplates.IsSMS">
+            <summary>
+            Mẫu là SMS
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.AppDomainFile.FileName">
+            <summary>
+            Tên file
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.AppDomainFile.ContentType">
+            <summary>
+            Loại file
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.AppDomainFile.FileExtension">
+            <summary>
+            Đuôi file
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.AppDomainFile.Description">
+            <summary>
+            Mô tả
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.AppDomainFile.FileRandomName">
+            <summary>
+            Tên lưu trong thư mục
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.AppDomainFile.FileUrl">
+            <summary>
+            Link download File
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.BaseSearch.PageIndex">
+            <summary>
+            Trang hiện tại
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.BaseSearch.PageSize">
+            <summary>
+            Số lượng item trên 1 trang
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.BaseSearch.SearchContent">
+            <summary>
+            Nội dung tìm kiếm chung
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.BaseSearch.OrderBy">
+            <summary>
+            Không dùng
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.DomainEntities.TotalItem">
+            <summary>
+            Tổng số item phân trang
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.DomainEntities.Created">
+            <summary>
+            Ngày tạo
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.DomainEntities.CreatedBy">
+            <summary>
+            Tạo bởi
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.DomainEntities.Updated">
+            <summary>
+            Ngày cập nhật
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.DomainEntities.UpdatedBy">
+            <summary>
+            Người cập nhật
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.DomainEntities.Deleted">
+            <summary>
+            Cờ xóa
+            </summary>
+        </member>
+        <member name="P:Entities.DomainEntities.DomainEntities.Active">
+            <summary>
+            Cờ active
+            </summary>
+        </member>
+        <member name="T:Entities.Order">
+            <summary>
+            Đơn hàng
+            </summary>
+        </member>
+        <member name="P:Entities.Order.UserID">
+            <summary>
+            Mã người dùng
+            </summary>
+        </member>
+        <member name="P:Entities.Order.PackageInfo">
+            <summary>
+            thông tin gói khi mua đơn hàng
+            </summary>
+        </member>
+        <member name="T:Entities.Package">
+            <summary>
+            Gói dịch vụ
+            </summary>
+        </member>
+        <member name="P:Entities.Package.PayPalPlanID">
+            <summary>
+            Paypal plan
+            </summary>
+        </member>
+        <member name="P:Entities.Package.PriceStripeID">
+            <summary>
+            stripe
+            </summary>
+        </member>
+        <member name="P:Entities.PaymentMethodConfiguration.Command">
+            <summary>
+            loại thanh toán
+            </summary>
+        </member>
+        <member name="P:Entities.PaymentMethodConfiguration.CurrCode">
+            <summary>
+            loại tiền tệ
+            </summary>
+        </member>
+        <member name="P:Entities.PaymentMethodConfiguration.Locale">
+            <summary>
+            ngôn ngữ
+            </summary>
+        </member>
+        <member name="P:Entities.Role.Permissions">
+            <summary>
+            Danh sách chức năng được truy cập
+            </summary>
+        </member>
+        <member name="P:Entities.Role.MenuList">
+            <summary>
+            Danh sách menu được truy cập
+            </summary>
+        </member>
+        <member name="P:Entities.Search.UserSearch.Role">
+            <summary>
+            Lọc theo chức vụ ID
+            </summary>
+        </member>
+        <member name="P:Entities.Search.UserSearch.Active">
+            <summary>
+            cờ  active
+            </summary>
+        </member>
+        <member name="P:Entities.Search.UserSearch.RoleCode">
+            <summary>
+            lọc theo chức cụ code
+            </summary>
+        </member>
+        <member name="P:Entities.Users.SocialId">
+            <summary>
+            UserID trên mạng xã hội
+            </summary>
+        </member>
+        <member name="P:Entities.Users.SocialType">
+            <summary>
+            loại mạng xã hội
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Code">
+            <summary>
+            Mã người dùng
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Username">
+            <summary>
+            UserName
+            </summary>
+        </member>
+        <member name="P:Entities.Users.FirstName">
+            <summary>
+            Họ
+            </summary>
+        </member>
+        <member name="P:Entities.Users.LastName">
+            <summary>
+            Tên
+            </summary>
+        </member>
+        <member name="P:Entities.Users.FullName">
+            <summary>
+            Họ và tên
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Phone">
+            <summary>
+            Số điện thoại
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Address">
+            <summary>
+            Địa chỉ
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Status">
+            <summary>
+            Trạng thái
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Birthday">
+            <summary>
+            Ngày sinh
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IdentityCard">
+            <summary>
+            Chứng minh nhân dân
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IdentityCardDate">
+            <summary>
+            Ngày cấp chứng minh nhân dân
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IdentityCardAddress">
+            <summary>
+            Nơi cấp chứng minh nhân dân
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Password">
+            <summary>
+            Mật khẩu người dùng
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Gender">
+            <summary>
+            Giới tính
+            0 => Khác
+            1 => Nam
+            2 => Nữ
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IsAdmin">
+            <summary>
+            Cờ cho biết đây là admin
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Roles">
+            <summary>
+            Danh sách chức vụ của người dùng
+            </summary>
+        </member>
+        <member name="P:Entities.Users.Note">
+            <summary>
+            Ghi chú
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IsSendOTP">
+            <summary>
+            key để phân loại tài khoản cần gửi mà OTP để đăng nhập 
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IsLock">
+            <summary>
+            Khóa tài khoản
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IsVerification">
+            <summary>
+            Xác minh tài khoản
+            </summary>
+        </member>
+        <member name="P:Entities.Users.IsTrial">
+            <summary>
+            Dùng thử
+            </summary>
+        </member>
+    </members>
+</doc>
