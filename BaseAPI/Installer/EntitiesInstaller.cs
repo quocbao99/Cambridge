@@ -24,6 +24,10 @@ namespace BaseAPI.Installer
             services.AddTransient<IHangFireManageService, HangFireManageService>();
             services.AddTransient<INotificationService, NotificationService>();
             services.AddTransient<IUserNotificationService, UserNotificationService>();
+            services.AddTransient<IProfileGroupService, ProfileGroupService>();
+            services.AddTransient<IStudentProfileService, StudentProfileService>();
+            services.AddTransient<IExaminationRoomService, ExaminationRoomService>();
+            services.AddTransient<IStudentExamService, StudentExamService>();
 
             #region paypal
             //services.AddTransient<IPlanPaypalService, PlanPaypalService>();
@@ -32,7 +36,7 @@ namespace BaseAPI.Installer
             #region stripe
             //services.AddTransient<IPriceStripeService, PriceStripeService>();
             #endregion
-            
+
         }
     }
 }

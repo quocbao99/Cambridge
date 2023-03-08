@@ -74,6 +74,9 @@ namespace Models
         /// 2 => Nữ
         /// </summary>
         public int Gender { get; set; }
+        /// <summary>
+        /// Quyền truy cập
+        /// </summary>
         public string Roles { get; set; }
         public ObjectJsonCustom UserRole { get; set; }
         public string Thumbnail { get; set; }
@@ -81,23 +84,15 @@ namespace Models
         /// Ghi chú
         /// </summary>
         public string Note { get; set; }
+        /// <summary>
+        /// Khóa admin
+        /// </summary>
         public bool IsAdmin { get; set; }
+        /// <summary>
+        /// Khóa dùng thử
+        /// </summary>
         public bool IsTrial { get; set; }
 
-        // thông tin hợp đồng
-        public bool CarContract { get; set; }
-        public int? CarMonthExp { get; set; }
-        public bool TruckContract { get; set; }
-        public int? TructMonthExp { get; set; }
-
-
-        public Guid? ContractCarID { get; set; }
-        public Guid? ContractTructID { get; set; }
-        public double DateDownLoad { get; set; }
-        public int CoutDownLoad { get; set; }
-        public bool OpenCar { get; set; }
-        public bool OpenTruct { get; set; }
-        public string OneSignalID { get; set; }
     }
 
 }

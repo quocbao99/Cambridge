@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using Entities;
 using Entities.Catalogue;
+using Entities.Configuration;
 using Models.Catalogue;
+using Models.Configuration;
 using Request.Catalogue.CatalogueCreate;
 using Request.Catalogue.CatalogueUpdate;
+using Request.Configuration;
 using Request.RequestCreate;
 using Request.RequestUpdate;
 using Utilities;
@@ -63,6 +66,36 @@ namespace Models.AutoMapper
             CreateMap<UserNotificationUpdate, UserNotification>().ReverseMap();
             CreateMap<PagedList<UserNotificationModel>, PagedList<UserNotification>>().ReverseMap();
 
+            //UserNotification
+            CreateMap<EmailConfigurationModel, EmailConfigurations>().ReverseMap();
+            CreateMap<EmailConfigurationRequestCreate, EmailConfigurations>().ReverseMap();
+            CreateMap<EmailConfigurationRequestUpdate, EmailConfigurations>().ReverseMap();
+            CreateMap<PagedList<EmailConfigurationModel>, PagedList<EmailConfigurations>>().ReverseMap();
+
+            //ProfileGroup
+            CreateMap<ProfileGroupModel, ProfileGroup>().ReverseMap();
+            CreateMap<ProfileGroupCreate, ProfileGroup>().ReverseMap();
+            CreateMap<ProfileGroupUpdate, ProfileGroup>().ReverseMap();
+            CreateMap<PagedList<ProfileGroupModel>, PagedList<ProfileGroup>>().ReverseMap();
+
+            //StudentProfile
+            CreateMap<StudentProfileModel, StudentProfile>().ReverseMap();
+            CreateMap<StudentProfileCreate, StudentProfile>().ReverseMap();
+            CreateMap<StudentProfileUpdate, StudentProfile>().ReverseMap();
+            CreateMap<PagedList<StudentProfileModel>, PagedList<StudentProfile>>().ReverseMap();
+
+            //ExaminationRoom
+            CreateMap<ExaminationRoomModel, ExaminationRoom>().ReverseMap();
+            CreateMap<ExaminationRoomCreate, ExaminationRoom>().ReverseMap();
+            CreateMap<ExaminationRoomUpdate, ExaminationRoom>().ReverseMap();
+            CreateMap<PagedList<ExaminationRoomModel>, PagedList<ExaminationRoom>>().ReverseMap();
+
+            //StudentExam
+            CreateMap<StudentExamModel, StudentExam>().ReverseMap();
+            CreateMap<StudentExamCreate, StudentExam>().ReverseMap();
+            CreateMap<StudentExamUpdate, StudentExam>().ReverseMap();
+            CreateMap<PagedList<StudentExamModel>, PagedList<StudentExam>>().ReverseMap();
         }
+        
     }
 }

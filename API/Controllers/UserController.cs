@@ -2,6 +2,7 @@
 using Entities.Search;
 using Extensions;
 using Interface.Services;
+using Interface.Services.Configuration;
 using Interface.Services.Specializing;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -37,10 +38,11 @@ namespace BaseAPI.Controllers
         private IRoleService roleService;
         private IUserService userService;
         protected IUserSpecializingService userSpecializingService;
-
+        private IEmailConfigurationService emailConfigurationService;
         public UserController(IServiceProvider serviceProvider, ILogger<BaseController<Users, UserModel, UserCreate, UserUpdate, UserSearch>> logger
             , IWebHostEnvironment env) : base(serviceProvider, logger, env)
         {
+            this.emailConfigurationService = serviceProvider.GetRequiredService<IEmailConfigurationService>();
             this.domainService = serviceProvider.GetRequiredService<IUserService>();
             this.roleService = serviceProvider.GetRequiredService<IRoleService>();
             this.userService = serviceProvider.GetRequiredService<IUserService>();
@@ -77,7 +79,7 @@ namespace BaseAPI.Controllers
 
                     item.Password = string.IsNullOrEmpty(item.Password) ? SecurityUtilities.HashSHA1("23312331") : SecurityUtilities.HashSHA1(item.Password);
                     item.Username = (item.Username ?? item.Phone).Replace(" ", "").Trim();
-                    if (role.Code == ROLECODE_MANAGER && !LoginContext.Instance.CurrentUser.isAdmin )
+                    if (!LoginContext.Instance.CurrentUser.isAdmin )
                     {
                         throw new AppException("Không có quyền tạo quản lý");
                     }
@@ -96,6 +98,13 @@ namespace BaseAPI.Controllers
                     item.Code = code;
                     item.Roles = role.Id.ToString();
                     var success = await this.userService.CreateAsync(item);
+                    // gửi mã OTP qua mail
+                    string Tos = item.Email.Equals(String.Empty) ? item.Username : item.Email;
+                    if (String.Empty.Contains(Tos)) throw new Exception("Lỗi không thể gửi mail");
+                    string[] CCs = { };
+                    string[] BCCs = { };
+                    await emailConfigurationService.SendMail("Thông tin tài khoản", Tos, CCs, BCCs, new EmailContent { isHtml = true, content = $" TK: {item.Email} </br> MK:{ item.Password}", attachments = null });
+                    
                     if (!success)
                         throw new Exception("Lỗi trong quá trình xử lý");
                     return new AppDomainResult()
@@ -180,14 +189,7 @@ namespace BaseAPI.Controllers
                     if (item.IsTrial is null )
                         item.IsTrial = user.IsTrial;
 
-                    if (itemModel.OpenCar is null)
-                        item.OpenCar = user.OpenCar;
-
-                    if (itemModel.OpenTruct is null)
-                        item.OpenTruct = user.OpenTruct;
-
-                    if (itemModel.Thumbnail is null)
-                        item.Thumbnail = user.Thumbnail;
+                    
 
                     if (itemModel.OneSignalID is null)
                         item.OneSignalID = user.OneSignalID;
@@ -200,9 +202,7 @@ namespace BaseAPI.Controllers
                         , d=> d.Roles
                         , d=> d.IsTrial
                         , d => d.Thumbnail
-                        , d => d.OneSignalID
-                        , d => d.OpenCar
-                        , d => d.OpenTruct);
+                        , d => d.OneSignalID);
                     if (!success)
                         throw new Exception("Lỗi trong quá trình xử lý");
                     return new AppDomainResult() { ResultCode = (int)HttpStatusCode.OK, ResultMessage = "Cập nhật tài khoản người dùng thành công!", Success = true };

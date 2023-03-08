@@ -113,19 +113,20 @@ namespace Service.Services.Specializing
                 }
                 UserInfoOfSocialModel userInfoOfSocialModel = new UserInfoOfSocialModel();
                 if (loginSocial.SocialType == (int)SocialType.FaceBook){
-                //var fb = new FacebookClient();
-                //fb.AccessToken = loginSocial.Token;
-                
-                //    dynamic data = fb.Get("me?fields=id,name,email,link,first_name,last_name,gender,locale,picture,age_range");
-                //    if (data == null)
-                //    {
-                //        throw new MyException("Không lấy được Dữ liệu từ facebook", HttpStatusCode.BadRequest);
+                    //var fb = new FacebookClient();
+                    //fb.AccessToken = loginSocial.Token;
 
-                //    }
-                //    userInfoOfSocialModel.SocialId = data.id;
-                //    userInfoOfSocialModel.Name = data.name;
-                //    userInfoOfSocialModel.Email = data.email;
-                //    userInfoOfSocialModel.Gender = data.gender;
+                    //    dynamic data = fb.Get("me?fields=id,name,email,link,first_name,last_name,gender,locale,picture,age_range");
+                    //    if (data == null)
+                    //    {
+                    //        throw new MyException("Không lấy được Dữ liệu từ facebook", HttpStatusCode.BadRequest);
+
+                    //    }
+                    //    userInfoOfSocialModel.SocialId = data.id;
+                    //    userInfoOfSocialModel.Name = data.name;
+                    //    userInfoOfSocialModel.Email = data.email;
+                    //    userInfoOfSocialModel.Gender = data.gender;
+                    throw new MyException("Tính năng đã tắt không được hỗ trợ", HttpStatusCode.BadRequest);
                 }
                 if (loginSocial.SocialType == (int)SocialType.Google) {
                     GoogleConfiguration googleConfiguration = new GoogleConfiguration();

@@ -75,6 +75,7 @@ namespace API
 
             //SQL
             services.AddDbContext<AppDbContext.AppDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("SampleDbContext")));
+            //services.AddDbContext<AppMySQLDbContext.AppMySQLDbContext>(x => x.UseMySQL(Configuration.GetConnectionString("SampleMySqlDbContext")));
 
             //Automapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

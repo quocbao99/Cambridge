@@ -63,7 +63,7 @@
     <PackageReference Include="Hangfire.SqlServer" Version="1.7.31" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -76,7 +76,6 @@
     <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.3" />
-    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -84,6 +83,7 @@
     <ProjectReference Include="..\Attributes\Attributes.csproj" />
     <ProjectReference Include="..\BaseAPI\BaseAPI.csproj" />
     <ProjectReference Include="..\SignalrHubs\SignalrHubs.csproj" />
+    <ProjectReference Include="..\ZoomLibary\ZoomAPI.csproj" />
   </ItemGroup>
 	<!--<ItemGroup>
 		<Content Include="Upload\**">

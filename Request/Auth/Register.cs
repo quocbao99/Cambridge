@@ -30,19 +30,19 @@ namespace Request.Auth
         /// <summary>
         /// Email
         /// </summary>
-        [StringLength(50, ErrorMessage = "Số kí tự của email phải nhỏ hơn 50!")]
-        [Required(ErrorMessage = "Vui lòng nhập Email!")]
-        [EmailAddress(ErrorMessage = "Email có định dạng không hợp lệ!")]
-        public string? Email { get; set; }
+        //[StringLength(50, ErrorMessage = "Số kí tự của email phải nhỏ hơn 50!")]
+        //[Required(ErrorMessage = "Vui lòng nhập Email!")]
+        //[EmailAddress(ErrorMessage = "Email có định dạng không hợp lệ!")]
+        //public string? Email { get; set; }
 
         /// <summary>
         /// Số điện thoại
         /// </summary>
-        [StringLength(12, ErrorMessage = "Số kí tự của số điện thoại phải lớn hơn 8 và nhỏ hơn 12!", MinimumLength = 9)]
-        //[Required(ErrorMessage = "Vui lòng nhập Số điện thoại!")]
-        [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^[0-9]+${9,11}", ErrorMessage = "Số điện thoại không hợp lệ")]
-        public string? Phone { get; set; }
+        //[StringLength(12, ErrorMessage = "Số kí tự của số điện thoại phải lớn hơn 8 và nhỏ hơn 12!", MinimumLength = 9)]
+        ////[Required(ErrorMessage = "Vui lòng nhập Số điện thoại!")]
+        //[DataType(DataType.PhoneNumber)]
+        //[RegularExpression(@"^[0-9]+${9,11}", ErrorMessage = "Số điện thoại không hợp lệ")]
+        //public string? Phone { get; set; }
 
         /// <summary>
         /// Họ và tên

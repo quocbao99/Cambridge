@@ -18,7 +18,7 @@ namespace Entities
         /// <summary>
         /// loại mạng xã hội
         /// </summary>
-        public int SocialType { get; set; }
+        public int? SocialType { get; set; }
 
         /// <summary>
         /// Mã người dùng
@@ -66,6 +66,9 @@ namespace Entities
         [StringLength(50)]
         public string Email { get; set; }
 
+        /// <summary>
+        /// Dùng để cập nhật Email
+        /// </summary>
         public string EmailTmp { get; set; }
 
         /// <summary>
@@ -128,6 +131,9 @@ namespace Entities
         /// </summary>
         [Description("Danh sách chức vụ của người dùng")]
         public string Roles { get; set; }
+        /// <summary>
+        /// Hình ảnh đại diện
+        /// </summary>
         public string Thumbnail { get; set; }
         //public Guid? DistrictId { get; set; }
         //public Guid? CityId { get; set; }
@@ -137,6 +143,10 @@ namespace Entities
         /// </summary>
         [Description("Ghi chú")]
         public string Note { get; set; }
+
+        /// <summary>
+        /// Vùng thời gian
+        /// </summary>
         public int? TimeZone { get; set; }
 
         public string RoleCode { get; set; }
@@ -160,11 +170,9 @@ namespace Entities
         /// </summary>
         public bool? IsTrial { get; set; }
 
-        public double DateDownLoad { get; set; }
-        public int CoutDownLoad { get; set; }
-        public int CoutDownLoadMonth { get; set; }
-        public bool OpenCar { get; set; }
-        public bool OpenTruct { get; set; }
+        /// <summary>
+        /// OneSignalID để thông báo trên Phone
+        /// </summary>
         public string OneSignalID { get; set; }
 
     }

@@ -18,10 +18,10 @@ namespace BaseAPI.Installer
         {
             //services.AddTransient<IAddMarterialService, AddMarterialService>();
             //services.AddTransient<IAddMarterialSubService, AddMarterialSubService>();
-            //services.AddTransient<IUserSpecializingService, UserSpecializingService>();
-            //services.AddTransient<IHangFireManageSpecializingService, HangFireManageSpecializingService>();
-            //services.AddTransient<IOTPHistoriesSpecializingService, OTPHistoriesSpecializingService>();
-            //services.AddTransient<IOrderSpecializingService, OrderSpecializingService>();
+            services.AddTransient<IUserSpecializingService, UserSpecializingService>();
+            services.AddTransient<IHangFireManageSpecializingService, HangFireManageSpecializingService>();
+            services.AddTransient<IOTPHistoriesSpecializingService, OTPHistoriesSpecializingService>();
+            services.AddTransient<IOrderSpecializingService, OrderSpecializingService>();
             //services.AddTransient<IContractSpecializingService, ContractSpecializingService>();
             //services.AddTransient<ICurrencyExchangeRateService, CurrencyExchangeRateService>();
             //services.AddTransient<IGetStatisticalService, GetStatisticalService>();

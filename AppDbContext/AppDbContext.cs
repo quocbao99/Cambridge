@@ -16,8 +16,6 @@ namespace AppDbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-
-
             //modelBuilder.Entity<OTPHistories>(x => x.ToTable("OTPHistories"));
             //modelBuilder.Entity<SMSEmailTemplates>(x => x.ToTable("SMSEmailTemplates"));
 
@@ -43,12 +41,9 @@ namespace AppDbContext
         public DbSet<OTPHistories> OTPHistories { get; set; }
         public DbSet<Notification> Notification { get; set; }
         public DbSet<UserNotification> UserNotification { get; set; }
-
-        #region paypal
-        #endregion
-
-        #region stripe
-
-        #endregion
+        public DbSet<ProfileGroup> ProfileGroup { get; set; }
+        public DbSet<StudentProfile> StudentProfile { get; set; }
+        public DbSet<ExaminationRoom> ExaminationRoom { get; set; }
+        public DbSet<StudentExam> StudentExam { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace Interface.Services
         Task<bool> UpdateUserPassword(Guid userId, string newPassword);
         Task<bool> HasPermission(string roles, string controller, string permission);
         Task<bool> ExpiredTrial(Guid userID);
+        Task<Users> LoginComfirmMail(string userName);
 
     }
 }

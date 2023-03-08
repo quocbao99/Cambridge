@@ -27,6 +27,44 @@ namespace Request.Auth
         /// <summary>
         /// Mã OTP
         /// </summary>
+        //public string OTPValue { get; set; }
+    }
+    public class LoginWithOTP
+    {
+        /// <summary>
+        /// Tên đăng nhập
+        /// </summary>
+        [Required(ErrorMessage = "Tên đăng nhập là bắt buộc nhập")]
+        public string Username { set; get; }
+        /// <summary>
+        /// Mật khẩu
+        /// </summary>
+
+        [Required(ErrorMessage = "Mật khẩu là bắt buộc nhập")]
+        public string Password { set; get; }
+        /// <summary>
+        /// Ghi nhớ mật khẩu
+        /// </summary>
+        public bool? RememberPassword { get; set; }
+
+        /// <summary>
+        /// Mã OTP
+        /// </summary>
+        public string OTPValue { get; set; }
+    }
+
+    public class LoginWithComfirmMail
+    {
+        /// <summary>
+        /// Tên đăng nhập
+        /// </summary>
+        [Required(ErrorMessage = "Tên đăng nhập là bắt buộc")]
+        public string Username { set; get; }
+
+        /// <summary>
+        /// Mã OTP
+        /// </summary>
+        [Required(ErrorMessage = "Mã OTP là bắt buộc là bắt buộc")]
         public string OTPValue { get; set; }
     }
     public class ResendOTP {

@@ -16,58 +16,8 @@ namespace AppDbContext.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.13")
+                .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Entities.AccessDescription", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("DTCSearch")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("PackageType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Specifications")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TimingChain_Belt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TransmissionManual")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TroubleShootingGuide")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("WiringDiagram")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AccessDescription");
-                });
 
             modelBuilder.Entity("Entities.Brand", b =>
                 {
@@ -111,44 +61,6 @@ namespace AppDbContext.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Brand");
-                });
-
-            modelBuilder.Entity("Entities.Car", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("BrandID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Icon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Car");
                 });
 
             modelBuilder.Entity("Entities.Catalogue.Menu", b =>
@@ -357,147 +269,6 @@ namespace AppDbContext.Migrations
                     b.ToTable("OTPHistories");
                 });
 
-            modelBuilder.Entity("Entities.Contract", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ContractType")
-                        .HasColumnType("int");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<double>("EndTime")
-                        .HasColumnType("float");
-
-                    b.Property<string>("PackageInfo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("PaymenntID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("StartTime")
-                        .HasColumnType("float");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("UserID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Contract");
-                });
-
-            modelBuilder.Entity("Entities.CurrencyExchangeRate", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal>("AmountType")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("AmountVN")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ExchangeType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CurrencyExchangeRate");
-                });
-
-            modelBuilder.Entity("Entities.DTC", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("DTCCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("EModelID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PossibleCause")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ReferenceCircuitDiagram")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ReferenceLocation")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DTC");
-                });
-
             modelBuilder.Entity("Entities.Districts", b =>
                 {
                     b.Property<Guid>("Id")
@@ -539,7 +310,7 @@ namespace AppDbContext.Migrations
                     b.ToTable("Districts");
                 });
 
-            modelBuilder.Entity("Entities.EModel", b =>
+            modelBuilder.Entity("Entities.ExaminationRoom", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -548,26 +319,38 @@ namespace AppDbContext.Migrations
                     b.Property<bool?>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("BrandID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<double?>("Created")
                         .HasColumnType("float");
 
                     b.Property<Guid?>("CreatedBy")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<double>("Date")
+                        .HasColumnType("float");
+
                     b.Property<bool?>("Deleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("EmodelType")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("ExamContentID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Icon")
+                    b.Property<string>("ExamRoomCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<double>("Finish")
+                        .HasColumnType("float");
+
+                    b.Property<string>("LinkZoom")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ProfileGroupID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Start")
+                        .HasColumnType("float");
+
+                    b.Property<Guid?>("SupervisorID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double?>("Updated")
                         .HasColumnType("float");
@@ -577,7 +360,7 @@ namespace AppDbContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EModel");
+                    b.ToTable("ExaminationRoom");
                 });
 
             modelBuilder.Entity("Entities.HangfireManage", b =>
@@ -625,176 +408,6 @@ namespace AppDbContext.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("HangfireManage");
-                });
-
-            modelBuilder.Entity("Entities.LineOff", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("EModelID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Icon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LineOffType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("LineOff");
-                });
-
-            modelBuilder.Entity("Entities.Market", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Code")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Icon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Market");
-                });
-
-            modelBuilder.Entity("Entities.Material", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FilePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("Size")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("SystemFileID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Material");
-                });
-
-            modelBuilder.Entity("Entities.MaterialSub", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FilePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("MaterialID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MaterialSub");
                 });
 
             modelBuilder.Entity("Entities.Notification", b =>
@@ -897,79 +510,16 @@ namespace AppDbContext.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("Entities.Package", b =>
+            modelBuilder.Entity("Entities.ProfileGroup", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AccessBrand")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccessBrandIDs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AccessBrandTypes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AccessDTC")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccessDTCIDs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AccessDTCTypes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AccessLineOff")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccessLineOffIDs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AccessLineOffTime")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccessLineOffTypes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AccessMaterial")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccessMaterialIDs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AccessMaterialSub")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccessMaterialSubIDs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AccessMaterialSubTypes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AccessMaterialTypes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AccessModel")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AccessModelIDs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AccessModelTypes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AccessPackageTypes")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool?>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<string>("AppStoreProductID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AppStoreSubscriptionID")
+                    b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("Created")
@@ -980,29 +530,11 @@ namespace AppDbContext.Migrations
 
                     b.Property<bool?>("Deleted")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MonthExp")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PackageType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PayPalPlanID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("PriceStripeID")
+                    b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("Updated")
@@ -1013,319 +545,7 @@ namespace AppDbContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Package");
-                });
-
-            modelBuilder.Entity("Entities.Payment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AccessToken")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal?>("AmountMoney")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("CallbackToken")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid?>("OrderID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("PayPalSubscriptionID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PaymentCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("PaymentMethodConfigurationID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int?>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("StatusForSubScription")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StripeSubscriptionID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("UserID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("paymentVNPayId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Payment");
-                });
-
-            modelBuilder.Entity("Entities.PaymentMethodConfiguration", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Command")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CurrCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Locale")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("PaymentMethodID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("accessKey")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("endpoint")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("notifyurl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("partnerCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("returnUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("serectkey")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PaymentMethodConfiguration");
-                });
-
-            modelBuilder.Entity("Entities.PaymentMethodType", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Code")
-                        .HasColumnType("int");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Logo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Version")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PaymentMethodType");
-                });
-
-            modelBuilder.Entity("Entities.PaymentSession", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal?>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PartnerClientId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PayType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("PaymentID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("RequestId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TransId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("paymentSession");
-                });
-
-            modelBuilder.Entity("Entities.Paypal.PlanPaypal", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("BillingCycles")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("PaymentMethodConfigurationID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("PaymentPreferences")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PlanPaypalID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProductID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Taxes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PlanPaypal");
-                });
-
-            modelBuilder.Entity("Entities.Policy", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("HTMLContent")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsUsed")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Policy");
+                    b.ToTable("ProfileGroup");
                 });
 
             modelBuilder.Entity("Entities.Role", b =>
@@ -1376,7 +596,7 @@ namespace AppDbContext.Migrations
                     b.ToTable("Role");
                 });
 
-            modelBuilder.Entity("Entities.Stripe.PriceStripe", b =>
+            modelBuilder.Entity("Entities.StudentExam", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1385,29 +605,14 @@ namespace AppDbContext.Migrations
                     b.Property<bool?>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<decimal?>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<double?>("Created")
                         .HasColumnType("float");
 
                     b.Property<Guid?>("CreatedBy")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Currency")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool?>("Deleted")
                         .HasColumnType("bit");
-
-                    b.Property<Guid?>("PaymentMethodConfigurationID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("PriceStripeID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProductID")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("Updated")
                         .HasColumnType("float");
@@ -1415,12 +620,18 @@ namespace AppDbContext.Migrations
                     b.Property<Guid?>("UpdatedBy")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool?>("isOnline")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("isVertified")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
-                    b.ToTable("PriceStripe");
+                    b.ToTable("StudentExam");
                 });
 
-            modelBuilder.Entity("Entities.SystemFile", b =>
+            modelBuilder.Entity("Entities.StudentProfile", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -1435,22 +646,76 @@ namespace AppDbContext.Migrations
                     b.Property<Guid?>("CreatedBy")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<double>("DateOfIssue")
+                        .HasColumnType("float");
+
                     b.Property<bool?>("Deleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("LineOffID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<double?>("Dob")
+                        .HasColumnType("float");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ParentID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("SystemFileCategory")
+                    b.Property<string>("ExamLevel")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SystemFileType")
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IdentificationNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("NeedsHardCopyCertification")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Occupation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneBackupNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoOfCandidate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoOfIDCardOrPassport")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PlaceOfIssue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PlaceOfWork")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pob")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PointTarget")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ProfileGroupID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PurposeOfTakingExam")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpecificAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("TimeOfSubmitingCandidateProfile")
+                        .HasColumnType("float");
+
+                    b.Property<string>("TypeOfAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TypeOfIdentification")
                         .HasColumnType("int");
 
                     b.Property<double?>("Updated")
@@ -1461,77 +726,7 @@ namespace AppDbContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SystemFile");
-                });
-
-            modelBuilder.Entity("Entities.UserFavorite", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("LineOffModel")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserFavorite");
-                });
-
-            modelBuilder.Entity("Entities.UserHistory", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Active")
-                        .HasColumnType("bit");
-
-                    b.Property<double?>("Created")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("CreatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("LineOffModel")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double?>("Updated")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("UpdatedBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserHistory");
+                    b.ToTable("StudentProfile");
                 });
 
             modelBuilder.Entity("Entities.UserNotification", b =>
@@ -1606,20 +801,11 @@ namespace AppDbContext.Migrations
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CoutDownLoad")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CoutDownLoadMonth")
-                        .HasColumnType("int");
-
                     b.Property<double?>("Created")
                         .HasColumnType("float");
 
                     b.Property<Guid?>("CreatedBy")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("DateDownLoad")
-                        .HasColumnType("float");
 
                     b.Property<bool?>("Deleted")
                         .HasColumnType("bit");
@@ -1678,12 +864,6 @@ namespace AppDbContext.Migrations
                     b.Property<string>("OneSignalID")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("OpenCar")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("OpenTruct")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Password")
                         .HasMaxLength(4000)
                         .HasColumnType("nvarchar(4000)");
@@ -1701,7 +881,7 @@ namespace AppDbContext.Migrations
                     b.Property<string>("SocialId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SocialType")
+                    b.Property<int?>("SocialType")
                         .HasColumnType("int");
 
                     b.Property<int?>("Status")

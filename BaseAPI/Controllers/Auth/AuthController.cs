@@ -116,7 +116,7 @@ namespace BaseAPI.Controllers.Auth
         /// <returns></returns>
         [AllowAnonymous]
         [HttpPost("login-otp")]
-        public virtual async Task<AppDomainResult> LoginWithOTPAsync([FromForm] Login loginModel)
+        public virtual async Task<AppDomainResult> LoginWithOTPAsync([FromForm] LoginWithOTP loginModel)
         {
             if (ModelState.IsValid)
             {
@@ -134,15 +134,69 @@ namespace BaseAPI.Controllers.Auth
                     await userService.UpdateFieldAsync(users, d => d.IsVerification, d => d.Active);
 
                     var userModel = mapper.Map<UserModel>(users);
-                    var token = await GenerateJwtToken(userModel, loginModel);
+                    var token = await GenerateJwtToken(userModel, new Login() { RememberPassword = loginModel.RememberPassword});
 
                     // thông báo cho admin
                     await notificationService.CreateAsync(new Notification() { 
                         Title ="Có tài khoản mới đăng ký!",
-                        Content=$"{userModel.Email} mới đăng ký tài khoản sử dụng Auto-ism",
+                        Content=$"{userModel.Email} mới đăng ký tài khoản sử dụng CamBridge",
                         IsRead=false,
                         Type= NotificationType.USERs.ToString(),
                         UserID= new Guid(ADMIN_ID),
+                    });
+
+                    return new AppDomainResult()
+                    {
+                        Success = true,
+                        Data = new
+                        {
+                            token = token,
+                        },
+                        ResultCode = (int)HttpStatusCode.OK
+                    };
+                }
+                else
+                    throw new UnauthorizedAccessException("Tên đăng nhập hoặc mật khẩu không chính xác");
+            }
+            else
+                throw new AppException(ModelState.GetErrorMessage());
+        }
+
+        /// <summary>
+        /// Đăng nhập hệ thống với mail comfirm
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <returns></returns>
+        [AllowAnonymous]
+        [HttpGet("login-mailComfirm")]
+        public virtual async Task<AppDomainResult> LoginWithMailComfirmAsync([FromQuery] LoginWithComfirmMail loginModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Users users = await this.userService.LoginComfirmMail(loginModel.Username);
+                if (users != null)
+                {
+                    if (users.IsAdmin == false && string.IsNullOrEmpty(users.Roles))
+                        throw new AppException("Không có quyền truy cập!");
+
+                    await userSpecializingService.CheckOTP(users, loginModel.OTPValue);
+
+                    // Xác minh tài khoản
+                    users.IsVerification = true;
+                    users.Active = true;
+                    await userService.UpdateFieldAsync(users, d => d.IsVerification, d => d.Active);
+
+                    var userModel = mapper.Map<UserModel>(users);
+                    var token = await GenerateJwtToken(userModel, new Login() { RememberPassword = false });
+
+                    // thông báo cho admin
+                    await notificationService.CreateAsync(new Notification()
+                    {
+                        Title = "Có tài khoản mới đăng ký!",
+                        Content = $"{userModel.Email} mới đăng ký tài khoản sử dụng CamBridge",
+                        IsRead = false,
+                        Type = NotificationType.USERs.ToString(),
+                        UserID = new Guid(ADMIN_ID),
                     });
 
                     return new AppDomainResult()
@@ -248,9 +302,7 @@ namespace BaseAPI.Controllers.Auth
                 // Kiểm tra định dạng user name
                 bool isValidUser = ValidateUserName.IsValidUserName(register.Username);
                 if (!isValidUser)
-                    throw new AppException("Vui lòng nhập số điện thoại hoặc email!");
-
-                
+                    throw new AppException("Vui lòng nhập email!");
 
                 var user = new Users()
                 {
@@ -259,8 +311,9 @@ namespace BaseAPI.Controllers.Auth
                     Created = Timestamp.Date(DateTime.UtcNow),
                     Active = false,
                     FullName = register.FullName,
-                    Phone = register.Phone,
-                    Email = register.Email,
+                    //Phone = register.Phone,
+                    //Email = register.Email,
+                    Email = register.Username,
                     IsVerification = false,
                     IsSendOTP = false,
                     IsTrial = true,
@@ -289,7 +342,7 @@ namespace BaseAPI.Controllers.Auth
                 await hangFireManageSpecializingService.GenerateJobDelayForTrialDisable(user.Id);
                 if (user.IsVerification == false)
                 {
-                    var res = await userSpecializingService.GenerateOTPAndSendMail(user, "AUTO-ISM OTP", "");
+                    var res = await userSpecializingService.GenerateOTPAndSendMail(user, "CamBrige OTP", "");
                     return new AppDomainResult()
                     {
                         Success = true,
@@ -693,9 +746,7 @@ namespace BaseAPI.Controllers.Auth
                         menuList = menuList,
                         //expiredDate = expiredDate,
                         isAdmin = user.IsAdmin,
-                        trial = user.IsTrial,
-                        OpenCar = user.OpenCar,
-                        OpenTruct = user.OpenTruct
+                        trial = user.IsTrial
                     };
 
                     var tokenDescriptor = new SecurityTokenDescriptor

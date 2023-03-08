@@ -176,6 +176,17 @@ namespace Service.Services
             }
             return null;
         }
+
+        public async Task<Users> LoginComfirmMail (string userName )
+        {
+            Users user = await Queryable.Where(e => e.Deleted == false && (e.Username == userName || e.Phone == userName || e.Email == userName)).OrderByDescending(d => d.Created).FirstOrDefaultAsync();
+            if (user != null)
+            {
+                return user;
+            }
+            return null;
+        }
+
         /// <summary>
         /// Kiểm tra pass word cũ đã giống chưa
         /// </summary>

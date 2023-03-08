@@ -48,99 +48,22 @@ namespace Utilities
 
         public const string HANGFIRE_ID = "11111111-1111-1111-1111-111111111111" ;
         public const string ADMIN_ID = "0debff1d-ac80-4e2d-be24-3151b26f2176";
-        public const string ROLE_CUSTOMER= "bb478b78-99d7-418c-0295-08dae257a40d";
-        public const string ROLECODE_CUSTOMER= "Khachhang";
+        public const string ROLE_CUSTOMER= "2d58e454-ee92-4851-3269-08db1ba26ac4";
+        public const string ROLECODE_CUSTOMER= "ThiSinh";
 
         public const string ROLE_MANAGER= "2dc979de-08c8-4fb2-20f2-08dae1aa05d9";
         public const string ROLECODE_MANAGER = "Quanly";
 
-        public const string SubjectMailLoginWithOTP = "Auto_ISM OTP for login ";
+        public const string SubjectMailLoginWithOTP = "CamBridge OTP for login ";
 
         public const string MessageBuyPackageForDetail = "Đăng kí gói để xem đầy đủ";
 
-        public enum LimitedDownload
-        {
-            LimitedDownload = 2, // 2 lượt download 1 ngày
-            LimitedDownloadMonth = 30 // 2 lượt download 1 ngày
-        }
-
+        
         public enum NotificationType
         {
             USER = 1
             ,USERs = 2
             ,ROLES = 3
-        }
-
-        public enum ExchangeType {
-            USD = 1
-        }
-
-        public enum SystemFileCategory
-        {
-            WrittingDiagram = 1,
-            Specifications = 2,
-            TimingBeltChain = 3,
-            TroubleShootingGuide = 4,
-            TransmissionManual = 5,
-        }
-
-        public enum PackageContractType
-        {
-            Car = 1,
-            Truck = 2
-        }
-
-        public enum EModelType
-        {
-            Car = 1,
-            Truck = 2
-        }
-
-        public enum AccessLineOff
-        {
-            All = 0,
-            Type = 1,
-            IDs = 2 ,
-            Time = 3 // Year
-        }
-        
-        public enum PaymentMethodType
-        {
-            MomoSubscription = 0,
-            Momo = 1,
-            Paypal = 2,
-            PaypalSubscription = 3,
-            VNPay = 4,
-            Stripe = 5,
-            StripeSubscription = 6
-
-        }
-        public enum MaterialStatus
-        {
-            Waiting = 1,
-            Success = 2,
-            Fail = 3
-        }
-
-        public enum PaymentStatus
-        {
-            Waiting = 1,
-            Success = 2,
-            Fail = 3
-        }
-
-        public enum PaymentStatusForSubScription
-        {
-            Waiting = 1,
-            Success = 2,
-            Fail = 3
-        }
-
-        public enum PaymentSessionStatus
-        {
-            Waiting = 1,
-            Success = 2,
-            Fail = 3
         }
 
         public enum OTPStatus
@@ -156,7 +79,7 @@ namespace Utilities
         }
         public enum TimeExpiredOTPMinute
         {
-            Time = 3, // 10 (Phút) (số nguyên)
+            Time = 60, // 60 (Phút) (số nguyên)
         }
         public enum TimeTrial
         {
@@ -173,12 +96,6 @@ namespace Utilities
         public enum SocialType {
             FaceBook =1,
             Google =2,
-        }
-
-        public enum SystemFileType
-        {
-            SystemFile = 1,
-            MaterialFile  = 2,
         }
 
         public const string hangfireRole = "hangfire";

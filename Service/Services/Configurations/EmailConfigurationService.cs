@@ -23,6 +23,11 @@ namespace Service.Services.Configurations
         {
         }
 
+        protected override string GetStoreProcName()
+        {
+            return "EmailConfiguration_GetPagingEmailConfiguration";
+        }
+
         /// <summary>
         /// Lấy thông tin cấu hình Email
         /// </summary>

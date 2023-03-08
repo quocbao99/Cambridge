@@ -27,6 +27,9 @@ namespace Service.Services
         public RoleService(IAppUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork, mapper)
         {
         }
-        //protected override bool GetIsStore() => false;
+        protected override string GetStoreProcName()
+        {
+            return "Role_GetPagingRole";
+        }
     }
 }

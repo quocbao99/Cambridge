@@ -22,6 +22,12 @@ namespace Service.Services.Catalogue
             //this._appDbContext = appDbContext;
             //this._userService = serviceProvider.GetRequiredService<IUserService>();
         }
+
+        protected override string GetStoreProcName()
+        {
+            return "Menu_GetPagingMenu";
+        }
+
         //public override async Task<bool> CreateAsync(Menu item)
         //{
         //    using (IDbContextTransaction transaction = _appDbContext.Database.BeginTransaction())
